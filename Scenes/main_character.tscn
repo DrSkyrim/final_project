@@ -1,0 +1,74 @@
+[gd_scene load_steps=10 format=3 uid="uid://dvmeifpq06ouw"]
+
+[ext_resource type="Script" uid="uid://drwnmdby68c25" path="res://scripts/main_character.gd" id="1_wmkwl"]
+[ext_resource type="Texture2D" uid="uid://1x1ns2ksw32u" path="res://Players/players blue x2.png" id="2_uvl38"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2q423"]
+atlas = ExtResource("2_uvl38")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wmkwl"]
+atlas = ExtResource("2_uvl38")
+region = Rect2(0, 192, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uvl38"]
+atlas = ExtResource("2_uvl38")
+region = Rect2(64, 192, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8yqgs"]
+atlas = ExtResource("2_uvl38")
+region = Rect2(128, 192, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jw0ju"]
+atlas = ExtResource("2_uvl38")
+region = Rect2(192, 192, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8yqgs"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2q423")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wmkwl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uvl38")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8yqgs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jw0ju")
+}],
+"loop": true,
+"name": &"run",
+"speed": 4.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jw0ju"]
+radius = 8.0
+
+[node name="Main_character" type="CharacterBody2D"]
+motion_mode = 1
+script = ExtResource("1_wmkwl")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(4, 4)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(1, 10)
+scale = Vector2(0.609375, 0.6875)
+sprite_frames = SubResource("SpriteFrames_8yqgs")
+animation = &"run"
+autoplay = "Idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2, 16)
+scale = Vector2(0.60000134, 0.32)
+shape = SubResource("CapsuleShape2D_jw0ju")
