@@ -1,12 +1,60 @@
-[gd_scene load_steps=3 format=3 uid="uid://bm3g81olwlxf4"]
+[gd_scene load_steps=6 format=3 uid="uid://bm3g81olwlxf4"]
 
 [ext_resource type="PackedScene" uid="uid://ktx6te0ahmxg" path="res://Scenes/level.tscn" id="1_80nbo"]
 [ext_resource type="PackedScene" uid="uid://dvmeifpq06ouw" path="res://Scenes/main_character.tscn" id="2_qxrlw"]
+[ext_resource type="PackedScene" uid="uid://dh04uxeg40oq" path="res://Scenes/Bandit.tscn" id="3_wrm1d"]
+[ext_resource type="PackedScene" uid="uid://37kffw0c8o0y" path="res://Scenes/tank.tscn" id="4_3dryh"]
+[ext_resource type="PackedScene" uid="uid://bpfcbcn0svrve" path="res://Scenes/combat_ui.tscn" id="5_wowpa"]
 
 [node name="Game" type="Node2D"]
 
-[node name="Main_Character" parent="." instance=ExtResource("2_qxrlw")]
+[node name="Main_Character" parent="." groups=["player"] instance=ExtResource("2_qxrlw")]
 z_index = 2
 position = Vector2(15, 55)
 
+[node name="Combat_ui" parent="Main_Character" groups=["combat_ui"] instance=ExtResource("5_wowpa")]
+
 [node name="Level" parent="." instance=ExtResource("1_80nbo")]
+
+[node name="Bandit1" parent="." instance=ExtResource("3_wrm1d")]
+position = Vector2(531, 241)
+scale = Vector2(0.24844979, 0.38733488)
+
+[node name="Bandit 3" parent="." instance=ExtResource("3_wrm1d")]
+position = Vector2(629, -23.999996)
+scale = Vector2(0.24844979, 0.38733488)
+
+[node name="Bandit 2" parent="." instance=ExtResource("3_wrm1d")]
+position = Vector2(459, 280.00003)
+scale = Vector2(0.24844979, 0.38733488)
+
+[node name="Bandit 4" parent="." instance=ExtResource("3_wrm1d")]
+position = Vector2(579, 21.000008)
+scale = Vector2(0.24844979, 0.38733488)
+
+[node name="Tank" parent="." instance=ExtResource("4_3dryh")]
+position = Vector2(749, 385)
+scale = Vector2(0.415403, 0.4632715)
+
+[node name="Tank2" parent="." instance=ExtResource("4_3dryh")]
+position = Vector2(875.00006, 385)
+scale = Vector2(0.415403, 0.4632715)
+
+[node name="Label" type="Label" parent="."]
+offset_left = 78.0
+offset_top = 52.0
+offset_right = 118.0
+offset_bottom = 75.0
+scale = Vector2(0.16000003, 0.27999938)
+text = "RUN WITH WASD
+RUNNING INTO THE ENEMY TRIGGERS COMBAT"
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 175.0
+offset_top = 30.0
+offset_right = 215.0
+offset_bottom = 192.0
+scale = Vector2(1.6601746, 1.4995823)
+theme_override_font_sizes/font_size = 8
+text = "YOU WERE TASKED WITH KILLING ALL BANDITS AND FINDING STOLEN TANKS"
+autowrap_mode = 2

@@ -7,6 +7,8 @@ var SPEED:float = 100
 
 
 func _physics_process(delta: float) -> void:
+	if controls_locked:
+		return
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
@@ -36,3 +38,21 @@ func _physics_process(delta: float) -> void:
 		animated_sprite_2d.play("Idle")
 
 	move_and_slide()
+
+var controls_locked := false
+
+func lock_controls():
+	controls_locked = true
+	velocity = Vector2.ZERO
+
+func unlock_controls():
+	controls_locked = false
+	# normal movement here
+	
+func play_shoot_animation():
+	animated_sprite_2d.play("shoot")
+
+func die():
+	var game_scene = load("res://Scenes/you_died.tscn").instantiate()
+	get_tree().root.add_child(game_scene)
+	queue_free()

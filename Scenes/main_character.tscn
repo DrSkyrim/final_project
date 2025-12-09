@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://dvmeifpq06ouw"]
+[gd_scene load_steps=15 format=3 uid="uid://dvmeifpq06ouw"]
 
 [ext_resource type="Script" uid="uid://drwnmdby68c25" path="res://scripts/main_character.gd" id="1_wmkwl"]
-[ext_resource type="Texture2D" uid="uid://1x1ns2ksw32u" path="res://Players/players blue x2.png" id="2_uvl38"]
+[ext_resource type="Texture2D" uid="uid://1x1ns2ksw32u" path="res://Textures/Players/players blue x2.png" id="2_uvl38"]
+[ext_resource type="Texture2D" uid="uid://l4ot0oqtvcyv" path="res://Textures/Players/players blue x1.png" id="3_auhcp"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2q423"]
 atlas = ExtResource("2_uvl38")
@@ -22,6 +23,22 @@ region = Rect2(128, 192, 64, 64)
 [sub_resource type="AtlasTexture" id="AtlasTexture_jw0ju"]
 atlas = ExtResource("2_uvl38")
 region = Rect2(192, 192, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_keg3j"]
+atlas = ExtResource("3_auhcp")
+region = Rect2(64, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nlild"]
+atlas = ExtResource("3_auhcp")
+region = Rect2(96, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q6spo"]
+atlas = ExtResource("3_auhcp")
+region = Rect2(0, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fsers"]
+atlas = ExtResource("3_auhcp")
+region = Rect2(32, 128, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_8yqgs"]
 animations = [{
@@ -49,6 +66,23 @@ animations = [{
 "loop": true,
 "name": &"run",
 "speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_keg3j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nlild")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q6spo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fsers")
+}],
+"loop": true,
+"name": &"shoot",
+"speed": 6.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jw0ju"]
@@ -65,8 +99,9 @@ zoom = Vector2(4, 4)
 position = Vector2(1, 10)
 scale = Vector2(0.609375, 0.6875)
 sprite_frames = SubResource("SpriteFrames_8yqgs")
-animation = &"run"
+animation = &"Idle"
 autoplay = "Idle"
+frame_progress = 0.7503946
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(2, 16)

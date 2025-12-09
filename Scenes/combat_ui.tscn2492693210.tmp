@@ -1,0 +1,71 @@
+[gd_scene load_steps=2 format=3 uid="uid://bpfcbcn0svrve"]
+
+[ext_resource type="Script" uid="uid://djfmx21sousr6" path="res://scripts/combat_ui.gd" id="1_jn67q"]
+
+[node name="Control" type="CanvasLayer"]
+scale = Vector2(1, 1.0054274)
+transform = Transform2D(1, 0, 0, 1.0054274, 0, 0)
+script = ExtResource("1_jn67q")
+max_heat = null
+
+[node name="Panel" type="Panel" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.52000034, 0.52259135)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer"]
+layout_mode = 2
+text = "Chose an action"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/VBoxContainer"]
+layout_mode = 2
+
+[node name="Attack1" type="Button" parent="Panel/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Shoot
+"
+
+[node name="Attack2" type="Button" parent="Panel/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Flare of Bullets
+"
+
+[node name="Attack3" type="Button" parent="Panel/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Dodge"
+
+[node name="Attack4" type="Button" parent="Panel/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Lasso"
+
+[node name="TurnInfo" type="Label" parent="Panel/VBoxContainer"]
+layout_mode = 2
+
+[node name="HeatContainer" type="VBoxContainer" parent="Panel/VBoxContainer"]
+layout_mode = 2
+
+[node name="HeatLabel" type="Label" parent="Panel/VBoxContainer/HeatContainer"]
+layout_mode = 2
+
+[node name="HeatBar" type="TextureProgressBar" parent="Panel/VBoxContainer/HeatContainer"]
+layout_mode = 2
+min_value = 1.0
+value = 6.0
+tint_progress = Color(0.8802243, 0.5886512, 0.24508211, 1)
+
+[node name="EnemyList" type="VBoxContainer" parent="Panel"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[connection signal="pressed" from="Panel/VBoxContainer/VBoxContainer/Attack1" to="." method="_on_attack_1_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/VBoxContainer/Attack2" to="." method="_on_attack_2_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/VBoxContainer/Attack3" to="." method="_on_attack_3_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/VBoxContainer/Attack4" to="." method="_on_attack_4_pressed"]

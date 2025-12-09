@@ -1,0 +1,34 @@
+[gd_scene load_steps=7 format=3 uid="uid://37kffw0c8o0y"]
+
+[ext_resource type="Texture2D" uid="uid://6ogw231c6qgs" path="res://Textures/Tanks/PNG/Tracks/Track_4_A.png" id="1_2nc7w"]
+[ext_resource type="Texture2D" uid="uid://ii62tvwf1ick" path="res://Textures/Tanks/PNG/Tracks/Track_4_B.png" id="2_vjxkb"]
+[ext_resource type="Texture2D" uid="uid://bpcx04q2gu08u" path="res://Textures/Tanks/PNG/Hulls_Color_A/Hull_02.png" id="3_6c1wy"]
+[ext_resource type="Texture2D" uid="uid://bq81uiodkpcbo" path="res://Textures/Tanks/PNG/Weapon_Color_A/Gun_01_B.png" id="4_iirto"]
+[ext_resource type="Texture2D" uid="uid://b6akr75p2l7xj" path="res://Textures/Tanks/PNG/Weapon_Color_A/Gun_03_A.png" id="5_ntitd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nayyn"]
+
+[node name="Tank" type="CharacterBody2D"]
+
+[node name="TrackLeft" type="Sprite2D" parent="."]
+position = Vector2(60, 6)
+texture = ExtResource("1_2nc7w")
+
+[node name="TrackRight" type="Sprite2D" parent="."]
+position = Vector2(-59, 6)
+texture = ExtResource("2_vjxkb")
+
+[node name="Hull" type="Sprite2D" parent="."]
+texture = ExtResource("3_6c1wy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(8.391772, 12.1287365)
+shape = SubResource("RectangleShape2D_nayyn")
+
+[node name="Turret" type="Sprite2D" parent="."]
+scale = Vector2(1, 1.0157231)
+texture = ExtResource("4_iirto")
+
+[node name="Gun" type="Sprite2D" parent="."]
+position = Vector2(0, -102)
+texture = ExtResource("5_ntitd")
