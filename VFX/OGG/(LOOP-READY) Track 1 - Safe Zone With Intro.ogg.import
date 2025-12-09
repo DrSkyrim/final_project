@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dbe5vxifjw7wt"
+path="res://.godot/imported/(LOOP-READY) Track 1 - Safe Zone With Intro.ogg-c1172c4b0f8289e3700ed38847cf0a23.oggvorbisstr"
+
+[deps]
+
+source_file="res://VFX/OGG/(LOOP-READY) Track 1 - Safe Zone With Intro.ogg"
+dest_files=["res://.godot/imported/(LOOP-READY) Track 1 - Safe Zone With Intro.ogg-c1172c4b0f8289e3700ed38847cf0a23.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

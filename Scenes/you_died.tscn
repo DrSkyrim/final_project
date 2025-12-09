@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://dhul2fmn37ne2"]
+[gd_scene load_steps=3 format=3 uid="uid://dhul2fmn37ne2"]
 
 [ext_resource type="Texture2D" uid="uid://c5fc5rqhb41mm" path="res://Textures/main_menu_Martin_Lukas_bg.png" id="2_03wjt"]
+[ext_resource type="AudioStream" uid="uid://b4icv8h2enw12" path="res://VFX/SFX/Fail_3.wav" id="2_u18a2"]
 
 [node name="MainMenu" type="CanvasLayer"]
 
@@ -23,3 +24,8 @@ layout_mode = 2
 size_flags_horizontal = 4
 theme_override_colors/font_color = Color(1, 0, 0, 1)
 text = "YOU DIED LMAO XD"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_u18a2")
+volume_db = -10.495
+autoplay = true

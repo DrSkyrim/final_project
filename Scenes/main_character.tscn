@@ -107,3 +107,5 @@ frame_progress = 0.7503946
 position = Vector2(2, 16)
 scale = Vector2(0.60000134, 0.32)
 shape = SubResource("CapsuleShape2D_jw0ju")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]

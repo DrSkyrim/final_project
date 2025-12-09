@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://3fcxl2uj3coj"
+path="res://.godot/imported/(LOOP-READY) Track 1 - Safe Zone With Intro.mp3-f7727edce5de4545b5f09935b6108794.mp3str"
+
+[deps]
+
+source_file="res://VFX/MP3/(LOOP-READY) Track 1 - Safe Zone With Intro.mp3"
+dest_files=["res://.godot/imported/(LOOP-READY) Track 1 - Safe Zone With Intro.mp3-f7727edce5de4545b5f09935b6108794.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

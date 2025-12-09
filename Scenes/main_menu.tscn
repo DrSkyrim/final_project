@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://bs72anpryxqip"]
+[gd_scene load_steps=5 format=3 uid="uid://bs72anpryxqip"]
 
 [ext_resource type="Script" uid="uid://bwqnu1k8qqtpe" path="res://scripts/main_menu.gd" id="1_1ehe0"]
 [ext_resource type="Texture2D" uid="uid://c5fc5rqhb41mm" path="res://Textures/main_menu_Martin_Lukas_bg.png" id="1_48xlc"]
 [ext_resource type="Texture2D" uid="uid://dxco8ix85yxiy" path="res://Textures/rect5.png" id="2_1ehe0"]
+[ext_resource type="AudioStream" uid="uid://bartnejdqh4as" path="res://VFX/MP3/(LOOP-READY) Track 1 - Safe Zone No Intro.mp3" id="4_ce3w2"]
 
 [node name="MainMenu" type="CanvasLayer"]
 script = ExtResource("1_1ehe0")
@@ -22,3 +23,8 @@ offset_bottom = 422.0
 [node name="StartButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 icon = ExtResource("2_1ehe0")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_ce3w2")
+volume_db = -10.699
+autoplay = true

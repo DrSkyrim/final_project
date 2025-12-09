@@ -8,14 +8,20 @@ transform = Transform2D(1, 0, 0, 1.0054274, 0, 0)
 script = ExtResource("1_jn67q")
 
 [node name="Panel" type="Panel" parent="."]
+custom_minimum_size = Vector2(300, 300)
 offset_right = 40.0
 offset_bottom = 40.0
 scale = Vector2(0.52000034, 0.52259135)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -62.0
+offset_right = 62.0
+offset_bottom = 195.0
+grow_horizontal = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Panel/VBoxContainer"]
 layout_mode = 2
@@ -46,20 +52,17 @@ layout_mode = 2
 
 [node name="HeatLabel" type="Label" parent="Panel/VBoxContainer/HeatContainer"]
 layout_mode = 2
+text = "Current Heat"
 
-[node name="HeatBar" type="TextureProgressBar" parent="Panel/VBoxContainer/HeatContainer"]
+[node name="HeatBar" type="ProgressBar" parent="Panel/VBoxContainer/HeatContainer"]
 layout_mode = 2
-min_value = 1.0
-value = 6.0
-tint_under = Color(0, 0, 0, 1)
-tint_progress = Color(0.8802243, 0.5886512, 0.24508211, 1)
 
 [node name="EnemyList" type="VBoxContainer" parent="Panel"]
 layout_mode = 0
-offset_left = 1.9230757
-offset_top = 138.93445
-offset_right = 124.999916
-offset_bottom = 161.773
+offset_left = 88.0
+offset_top = 225.0
+offset_right = 212.0
+offset_bottom = 225.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 
